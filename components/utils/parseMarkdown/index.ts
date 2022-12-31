@@ -1,7 +1,8 @@
+// @ts-ignore
+import mdtl from 'markdown-it-task-lists';
 import mdmj from 'markdown-it-mathjax3';
 import mdh from 'markdown-it-highlightjs';
 import mdc from 'markdown-it-container';
-import mdtl from 'markdown-it-task-lists';
 import md from 'markdown-it';
 
 const mdSettings = {
@@ -38,4 +39,4 @@ const parseMarkDown = (text: string) => {
     return mdText;
 }
 
-export default parseMarkDown
+export default parseMarkDown;
