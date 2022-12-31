@@ -5,7 +5,7 @@ const Index = () => {
         <Page
             title="Error 404"
         >
-            Oops, apperently this page doesn't exist.
+            {"Oops, apperently this page doesn't exist."}
         </Page>
     </>)
 }

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const Footer = () => {
-    const [name, useName] = useState('')
+    const [name, setName] = useState('')
 
     useEffect(() => {
-        useName(window.origin.replace('https://', '').replace('http://', '').replace('www.', ''));
+        setName(window.origin.replace('https://', '').replace('http://', '').replace('www.', ''));
     }, [])
 
     return (
