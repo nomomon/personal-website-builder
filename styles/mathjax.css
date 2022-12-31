@@ -1,0 +1,7 @@
+.MathJax>svg {
+    display: inline;
+}
+
+.MathJax[display=true] {
+    /* margin: .5em 0 !important; */
+}

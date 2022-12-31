@@ -39,7 +39,7 @@ const TagPage: FC<TagPageProps> = ({ title, posts }) => {
                 )}
                 {
                     posts.length == 0 && (
-                        <li>Nothing here yet</li>
+                        <p>Nothing here yet</p>
                     )
                 }
             </ol>
@@ -77,11 +77,12 @@ export async function getStaticProps(
         path,
         text: fs.readFileSync(path, 'utf-8')
     }));
-    const parsedFiles = files.map(file => parsePost(file));
+    const parsedFiles = files
+        .map(file => parsePost(file))
+        .filter(file => file.publish);
 
-    const taggedFiles = parsedFiles.filter(file =>
-        textHasTag(file.tags, file.content, tag)
-    );
+    const taggedFiles = parsedFiles
+        .filter(file => textHasTag(file.tags, file.content, tag));
 
     return {
         props: {

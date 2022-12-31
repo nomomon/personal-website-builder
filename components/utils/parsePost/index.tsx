@@ -16,6 +16,7 @@ const parsePost = ({ text, path }: parsePostProps) => {
 
     return {
         path: path || '',
+        publish: data.publish || false,
         title: title || '',
         description: data.description || '',
         date: data.date || '0',

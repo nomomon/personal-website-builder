@@ -35,8 +35,16 @@ const Post: FC<PostProps> = ({ title, md, date, tags }) => {
 
 export async function getStaticPaths() {
     const filePaths = deepReadFilesSync('public');
+    const files = filePaths.map(path => ({
+        path,
+        text: fs.readFileSync(path, 'utf-8')
+    }));
+    const parsedFiles = files
+        .map(file => parsePost(file))
+        .filter(file => file.publish);
+    const filePathsPublished = parsedFiles.map(file => file.path);
 
-    const filesParam = filePaths.map(path => ({
+    const filesParam = filePathsPublished.map(path => ({
         params: {
             fileName: postPathToLink(path)
         }
@@ -60,11 +68,13 @@ export async function getStaticProps(
         text: fs.readFileSync(filePath, 'utf-8')
     });
 
+
     return {
         props: {
             ...file
         }
     };
+
 }
 
 export default Post;
