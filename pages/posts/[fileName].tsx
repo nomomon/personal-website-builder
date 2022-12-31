@@ -34,7 +34,8 @@ const Post: FC<PostProps> = ({ title, md, date, tags }) => {
 };
 
 export async function getStaticPaths() {
-    const filePaths = deepReadFilesSync('public');
+    const filePaths = deepReadFilesSync('public')
+        .filter(path => path.endsWith('.md'));
     const files = filePaths.map(path => ({
         path,
         text: fs.readFileSync(path, 'utf-8')

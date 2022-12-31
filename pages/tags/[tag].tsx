@@ -48,7 +48,8 @@ const TagPage: FC<TagPageProps> = ({ title, posts }) => {
 }
 
 export async function getStaticPaths() {
-    const filePaths = deepReadFilesSync('public');
+    const filePaths = deepReadFilesSync('public')
+        .filter(path => path.endsWith('.md'));
     const fileTexts = filePaths.map(path => {
         return fs.readFileSync(path, 'utf-8')
     });
@@ -72,7 +73,8 @@ export async function getStaticProps(
     { params }: { params: { tag: string } }
 ) {
     const tag = params.tag;
-    const filePaths = deepReadFilesSync('public');
+    const filePaths = deepReadFilesSync('public')
+        .filter(path => path.endsWith('.md'));
     const files = filePaths.map(path => ({
         path,
         text: fs.readFileSync(path, 'utf-8')
