@@ -14,6 +14,8 @@ const parsePost = ({ text, path }: parsePostProps) => {
 
     const md = parseMarkDown(content);
 
+    data.date = String(data.date);
+
     return {
         path: path || '',
         publish: data.publish || false,

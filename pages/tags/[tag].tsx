@@ -38,7 +38,7 @@ const TagPage: FC<TagPageProps> = ({ title, posts }) => {
                     )
                 )}
                 {
-                    posts.length == 0 && (
+                    (!posts || posts.length == 0) && (
                         <p>Nothing here yet</p>
                     )
                 }

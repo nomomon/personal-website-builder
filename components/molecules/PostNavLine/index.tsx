@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { twMerge } from 'tailwind-merge';
 import A from "../../atoms/A";
 import parseDate from "../../utils/parseDate";
@@ -24,7 +24,7 @@ const PostNavline: FC<PostNavlineProps> = ({ date, tags }) => {
                     </span>
                 )}
                 {
-                    tags.map((tag, index) => (
+                    tags && tags.length > 0 && tags.map((tag, index) => (
                         <A
                             key={index}
                             href={`/tags/${tag}`}
@@ -36,8 +36,8 @@ const PostNavline: FC<PostNavlineProps> = ({ date, tags }) => {
                 }
             </div>
             <span
-                className=" underline cursor-pointer flex-end"
-                onClick={router.back}
+                className="underline cursor-pointer flex-end"
+                onClick={router && (() => router.back())}
             >
                 Back
             </span>
