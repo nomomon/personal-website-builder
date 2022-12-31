@@ -59,8 +59,8 @@ export async function getStaticPaths() {
 
     return {
         paths: [
-            { params: { tag: 'projects' } },
-            { params: { tag: 'notes' } },
+            { params: { tag: 'project' } },
+            { params: { tag: 'note' } },
             { params: { tag: 'blog' } },
             ...tagsParam,
         ],

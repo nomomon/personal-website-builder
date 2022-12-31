@@ -21,7 +21,7 @@ const Page: FC<PageProps> = ({ title, children, useNavLine = true }) => {
                     <Navline
                         links={[
                             { href: "/", label: "Home" },
-                            { href: "/tags/projects/", label: "Projects" },
+                            { href: "/tags/project/", label: "Projects" },
                             { href: "/tags/blog/", label: "Blog" },
                             { href: "/tags/note/", label: "Notes" }
                         ]}
