@@ -2,6 +2,10 @@
     --callout-color: 68, 138, 255;
 }
 
+.markdown-body p {
+    margin-bottom: 1em;
+}
+
 .markdown-body hr {
     margin: 1em 0;
 }
