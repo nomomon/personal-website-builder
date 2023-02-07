@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { FC, ReactNode } from "react";
+import Link from 'next/link';
+import { FC, ReactNode } from 'react';
 
 interface AProps {
     href: string;
-    target?: "_blank" | "_self" | "_parent" | "_top";
+    target?: '_blank' | '_self' | '_parent' | '_top';
     className?: string;
     children: ReactNode;
 }
