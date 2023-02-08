@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('md-light.css');
 
 body {
     min-height: 100vh;
