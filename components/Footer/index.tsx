@@ -4,7 +4,7 @@ import A from '@/components/A';
 
 const Footer = (): ReactElement => {
     return (
-        <footer className="w-full flex flex-row justify-center absolute bottom-8">
+        <footer className="w-full flex flex-row justify-center my-8">
             <p className="text-gray-500">
                 Made with ❤️ by
                 <A
