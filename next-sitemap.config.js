@@ -1,5 +1,7 @@
+import config from '@/configuration';
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://example.com',
+    siteUrl: config.siteUrl,
     generateRobotsTxt: false,
 };

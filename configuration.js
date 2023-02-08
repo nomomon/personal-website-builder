@@ -1,7 +1,9 @@
 const config = {
     name: 'Mansur Nurmukhambetov',
     nickname: 'nomomon',
+    siteUrl: 'https://nomomon.github.io',
     contact: 'https://github.com/nomomon',
+    srcDir: '_obsidian',
     links: [
         {
             name: 'GitHub',
