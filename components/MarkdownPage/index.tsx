@@ -20,7 +20,7 @@ const MarkdownPage: FC<MarkdownPageProps> = ({
     return (
         <div className="w-full overflow-y-auto">
             <MarkdownTitle frontmatter={frontmatter} />
-            <article className="w-full max-w-xl m-auto mt-8">
+            <article className="w-full max-w-xl m-auto mt-8 max-sm:px-4">
                 <MarkdownRender markdown={content} />
             </article>
         </div>

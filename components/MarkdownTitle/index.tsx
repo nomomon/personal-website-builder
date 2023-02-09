@@ -25,15 +25,14 @@ const MarkdownTitle: FC<MarkdownTitleProps> = ({
             'bg-gradient-to-r from-yellow-500 to-green-500'
         );
     }
-    let style = frontmatter.banner && ({
-        backgroundImage: `url(${frontmatter.banner})`,
-    }) || undefined;
+    let style =
+        (frontmatter.banner && {
+            backgroundImage: `url(${frontmatter.banner})`,
+        }) ||
+        undefined;
 
     return (
-        <div
-            className={styleClasses}
-            style={style}
-        >
+        <div className={styleClasses} style={style}>
             <h1 className="text-white text-6xl drop-shadow-md">
                 {frontmatter.title}
             </h1>
