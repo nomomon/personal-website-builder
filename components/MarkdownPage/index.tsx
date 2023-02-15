@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { FC, ReactElement } from 'react';
 import MarkdownRender from '../MarkdownRender';
 import MarkdownTitle from '../MarkdownTitle';
-import MDXRender from '../MDXRender';
 import ReadFrontMatter from '../utils/ReadFrontMatter';
 
 interface MarkdownPageProps {
