@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('md-light.css');
+@import url('katex.min.css');
 
 body {
     min-height: 100vh;
