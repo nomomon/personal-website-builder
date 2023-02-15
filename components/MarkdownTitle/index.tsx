@@ -22,7 +22,7 @@ const MarkdownTitle: FC<MarkdownTitleProps> = ({
     } else {
         styleClasses = twMerge(
             styleClasses,
-            'bg-gradient-to-r from-yellow-500 to-green-500'
+            'bg-gradient-to-r from-purple-500 to-red-500'
         );
     }
     let style =

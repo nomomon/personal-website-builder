@@ -7,7 +7,6 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <title>{config.name}</title>
                 <link rel="icon" href="/logo.svg" />
             </Head>
             <body>

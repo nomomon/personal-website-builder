@@ -1,6 +1,8 @@
+import Head from 'next/head';
 import { FC, ReactElement } from 'react';
 import MarkdownRender from '../MarkdownRender';
 import MarkdownTitle from '../MarkdownTitle';
+import MDXRender from '../MDXRender';
 import ReadFrontMatter from '../utils/ReadFrontMatter';
 
 interface MarkdownPageProps {
@@ -19,6 +21,9 @@ const MarkdownPage: FC<MarkdownPageProps> = ({
 
     return (
         <div className="w-full overflow-y-auto">
+            <Head>
+                <title>{frontmatter.title}</title>
+            </Head>
             <MarkdownTitle frontmatter={frontmatter} />
             <article className="w-full max-w-xl m-auto mt-8 max-sm:px-4">
                 <MarkdownRender markdown={content} />
