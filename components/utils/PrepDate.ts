@@ -1,12 +1,16 @@
 const PrepDate = (date: Date | String | undefined) => {
-    const returnDate = new Date(JSON.stringify(date));
+    if (!date) return '';
+    if (typeof date === 'string') {
+        date = new Date(date);
 
-    if (returnDate.toString() === 'Invalid Date') {
-        return '';
+        if (date.toString() === 'Invalid Date') {
+            return '';
+        }
     }
+    date = date as Date;
 
     return (
-        returnDate?.toLocaleDateString('en-US', {
+        date.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',

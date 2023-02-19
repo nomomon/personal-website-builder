@@ -1,5 +1,6 @@
 import TagPage from '@/components/TagPage';
 import Post from '@/components/types/Post';
+import PrepDate from '@/components/utils/PrepDate';
 import PrepLink from '@/components/utils/PrepLink';
 import config from '@/configuration';
 import { readdirSync, readFileSync } from 'fs';
@@ -54,30 +55,34 @@ export function getStaticProps({ params: { slug } }: any) {
     const filePaths = readdirSync(config.srcDir);
 
     // Get all posts with tag
-    const posts = filePaths.map((filePath) => {
-        const path = join(config.srcDir, filePath);
-        const file = readFileSync(path, 'utf8');
-        const { data } = matter(file);
-        const { tags: fileTags } = data;
+    const posts = filePaths
+        .map((filePath) => {
+            const path = join(config.srcDir, filePath);
+            const file = readFileSync(path, 'utf8');
+            const { data } = matter(file);
+            const { tags: fileTags } = data;
 
-        if (fileTags && fileTags.includes(tag)) {
-            // File name
-            const fileName = filePath.split('.')[0];
+            data.date = PrepDate(data.date);
 
-            return {
-                title: fileName,
-                slug: PrepLink(fileName),
-                ...data,
-            };
-        }
-        return null;
-    }).filter((post: any) => post);
+            if (fileTags && fileTags.includes(tag)) {
+                // File name
+                const fileName = filePath.split('.')[0];
+
+                return {
+                    title: fileName,
+                    slug: PrepLink(fileName),
+                    ...data,
+                };
+            }
+            return null;
+        })
+        .filter((post: Post | null) => post);
 
     return {
         props: {
             tag,
             posts,
-        }
+        },
     };
 }
 
