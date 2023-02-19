@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Post from "../types/post";
+import Post from '@/components/types/Post';
 import TimeSince from "../utils/TimeSince";
 
 

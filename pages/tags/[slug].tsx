@@ -1,5 +1,5 @@
 import TagPage from '@/components/TagPage';
-import Post from '@/components/types/post';
+import Post from '@/components/types/Post';
 import PrepLink from '@/components/utils/PrepLink';
 import config from '@/configuration';
 import { readdirSync, readFileSync } from 'fs';

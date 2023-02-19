@@ -3,7 +3,7 @@ import { FC } from "react";
 import A from "../A";
 import MarkdownTitle from "../MarkdownTitle";
 import PostCard from "../PostCard";
-import Post from "../types/post";
+import Post from '@/components/types/Post';
 
 interface TagPageProps {
     tag: string;
